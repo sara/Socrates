@@ -50,8 +50,15 @@ It will run the operator, store results, and return appropriate data to be sent 
 It will store/retrieve stored collection data
 '''
 def run(typ, mod, fn, param, working_set=None):
+<<<<<<< Updated upstream
     is_new = False
     if typ in MODULE_LIST and mod in MODULE_LIST[typ]:
+=======
+  is_new = False
+  op_set = make_operator_set (typ, mod, fn, param)
+  workflow_id = addWorkflow(op_set)
+  if typ in MODULE_LIST and mod in MODULE_LIST[typ]:
+>>>>>>> Stashed changes
         #get module/function references
         callingTyp = getattr(modules, typ)
         callingMod = getattr(callingTyp, mod)
@@ -62,7 +69,7 @@ def run(typ, mod, fn, param, working_set=None):
             return _err("Parameters are not valid") #get better error from constraint function
 
         applyDefaults(param, fn_specs[fn]['param'])
-
+            
         #call and augment with meta information
         if typ == 'analysis':
             if working_set is None:
@@ -151,6 +158,7 @@ def parse_params(parameters, ip=False):
             working_set["working_set_name"] = working_set_name
             if is_new:
                 insert_id = user.addWorkingSet(working_set)
+                #user.test(working_set)
                 working_set['working_set_id'] = str(insert_id)
             else:
                 user.updateWorkingSet(working_set_id, working_set) #overwrite in database
