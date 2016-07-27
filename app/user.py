@@ -62,6 +62,19 @@ def addWorkingSet(working_set):
     del working_set['_id']
     return insert_id
 
+<<<<<<< Updated upstream
+=======
+#def addOperatorSet(op_set, workflow_id): 
+#  insert_id = db.workflow.updateOne(workflow_id, $set: {'op_sets':
+def test(x):
+    db.workflow.insert_one(x)
+
+def addWorkflow(op_set):
+  workflow = {'user_id' : user_id, 'op_sets': op_set}
+  insert_id = db.workflow.insert_one(workflow).inserted_id
+  return inserted_id
+
+>>>>>>> Stashed changes
 def removeWorkingSet(working_set_id):
     db.working_set.remove({"_id" : ObjectId(working_set_id)});
 
