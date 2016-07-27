@@ -232,7 +232,6 @@ form .row .comment .optional{
 #workspace .results{
 	max-width: 560px;
 	float: left;
-	border-radius: 4px;
 	background: #FFF;
 	margin: 10px;
 }
