@@ -230,7 +230,10 @@ form .row .comment .optional{
 #workspace .results{
 	max-width: 560px;
 	float: left;
-	border-radius: 4px;
+  border-style: double;
+	border-radius: 10px;
+  border-width: 6px;
+  border-color: #35abd6;
 	background: #FFF;
 	margin: 10px;
 }
